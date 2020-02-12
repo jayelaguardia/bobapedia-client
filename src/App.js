@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import config from './config';
+import LandingPage from './routes/LandingPage'
 
 function checkConnection(){
   fetch(config.API_ENDPOINT)
@@ -10,14 +12,27 @@ function checkConnection(){
   .catch(error => console.log(error))
 }
 
-function App() {
+class App extends Component {
 
-  return (
-    <main className='App'>
-      <h1>Bobapedia</h1>
-      {checkConnection()}
-    </main>
-  );
+  render() {
+    return (
+      <div className='App'>
+        <header className='App__header'>
+          <h1>BOBAPEDIA</h1>
+        </header>
+        <main className='App__main'>
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={LandingPage}
+            />
+          </Switch>
+        </main>
+      </div>
+    )
+  }
 }
+
 
 export default App;

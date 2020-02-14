@@ -2,15 +2,11 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import config from './config';
 import LandingPage from './routes/LandingPage'
-
-function checkConnection(){
-  fetch(config.API_ENDPOINT)
-  .then(response => response.json())
-  .then(responseJson => {
-    console.log(responseJson.message)
-  })
-  .catch(error => console.log(error))
-}
+import DIYPage from './routes/DIYPage'
+import ClassicTeaPage from './routes/ClassicTeaPage'
+import CreationTeaPage from './routes/CreationTeaPage'
+import AddTeaForm from './routes/AddTeaForm'
+import UpdateTeaForm from './routes/UpdateTeaForm'
 
 class App extends Component {
 
@@ -26,6 +22,26 @@ class App extends Component {
               exact
               path={'/'}
               component={LandingPage}
+            />
+            <Route
+              path={'/DIY'}
+              component={DIYPage}
+            />
+            <Route
+              path={'/classic/:classicID'}
+              component={ClassicTeaPage}
+            />
+            <Route
+              path={'/creation/:creationID'}
+              component={CreationTeaPage}
+            />
+            <Route
+              path={'/AddTeaForm'}
+              component={AddTeaForm}
+            />
+            <Route
+              path={'/UpdateTeaForm'}
+              component={UpdateTeaForm}
             />
           </Switch>
         </main>

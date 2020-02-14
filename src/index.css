@@ -11,10 +11,20 @@ body {
   line-height: 1.5;
 }
 
-.classicListItem {
+.classicListItem, .creationListItem {
   display: inline-flex;
   background-color: lightgray;
   height: 200px;
   width: 200px;
   margin: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

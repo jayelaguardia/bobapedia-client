@@ -28,8 +28,7 @@ export default class DIYPage extends Component {
     const { error } = this.context
     return (
       <section className='DIYPage'>
-        <h2>DIY Tea</h2>
-        <Link to={`/`}><button>Home</button></Link>
+        <h2>Creation Tea</h2>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderCreation()}

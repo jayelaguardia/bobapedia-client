@@ -8,7 +8,7 @@ export default class ClassicListItem extends Component {
     return (
       <Link to={`/classic/${classic.classic_id}`}>
         <div className='classicListItem'>
-          <h2 className='classicListItem__heading'>{classic.classic_name}</h2>
+          <h3 className='classicListItem__heading'>{classic.classic_name}</h3>
         </div>
       </Link>
     )

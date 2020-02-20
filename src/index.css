@@ -3,28 +3,117 @@
 }
 
 body {
-  font-family: "Open Sans",
-  sans-serif; 
+  font-family: "Open Sans", sans-serif; 
   font-size: 20px;
   color: black;
   text-align: center;
   line-height: 1.5;
+  background-image: url("./bubbles.jpg");
+}
+
+h1, h2 {
+  color: #0D0630;
+}
+
+a {
+  text-decoration: none;
+  color: #E6F9AF;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #18314F;
+  height: 70px;
 }
 
 .classicListItem, .creationListItem {
   display: inline-flex;
-  background-color: lightgray;
+  background-color: #384E77;
   height: 200px;
   width: 200px;
   margin: 20px;
+  padding: 30px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.classicListItem:hover, .creationListItem:hover {
+  background-color: #8BBEB2;
+}
+
+.classicContents, .creationContents {
+  background-color: #E6F9AF;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+}
+
+.classicHeadings, .creationHeadings {
+  color: #18314F;
+}
+
+li, p {
+  color: #0D0630;
 }
 
 ul {
   list-style: none;
 }
 
+.LoginForm, .RegistrationForm {
+  background-color: #E6F9AF;
+  width: 300px;
+  height: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: #18314F;
+}
+
+.AddTeaForm, .UpdateTeaForm {
+  background-color: #E6F9AF;
+  width: 300px;
+  height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  color: #18314F;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 button {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  font-size: 16px;
+  height: 50px;
+  width: 75px;
+  background-color: #8BBEB2;
+  color: #0D0630;
 }
+
+button:hover {
+  cursor: pointer;
+  background-color: #384E77;
+}
+
+.disabled {
+  display: none;
+}
+

@@ -1,8 +1,13 @@
 import config from '../config'
+import TokenService from './token-service'
 
 const creationService = {
   getCreation() {
-    return fetch(`${config.API_ENDPOINT}/creation`)
+    return fetch(`${config.API_ENDPOINT}/creation`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
       .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
@@ -10,7 +15,11 @@ const creationService = {
       )
   },
   getCreationID(creation_id) {
-    return fetch(`${config.API_ENDPOINT}/creation/${creation_id}`)
+    return fetch(`${config.API_ENDPOINT}/creation/${creation_id}`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
       .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
@@ -22,6 +31,7 @@ const creationService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         "creation_user": 1,
@@ -43,7 +53,10 @@ const creationService = {
   },
   deleteCreation(creation_id) {
     return fetch(`${config.API_ENDPOINT}/creation/${creation_id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
     })
     .then(res =>
       (!res.ok)
@@ -56,6 +69,7 @@ const creationService = {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
         "creation_user": 1,

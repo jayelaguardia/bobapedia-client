@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import classicContext from '../contexts/classicContext'
 import classicService from '../services/classicService'
 
@@ -29,11 +28,9 @@ export default class ClassicTeaPage extends Component {
       classic_milk,	
       classic_sweetener } = this.context.classic
     return <>
+      <h2>{classic_name}</h2>
       <div className='classicContents'>
-        <Link to={`/`}><button>Home</button></Link>
-        <Link to={`/DIY`}><button>DIY</button></Link>
-        <h2>{classic_name}</h2>
-        <h3>Ingredients:</h3>
+        <h3 className='classicHeadings'>Ingredients:</h3>
         <ul>
           <li>{classic_tea}</li>
           <li>{classic_flavor1}</li>
@@ -43,7 +40,7 @@ export default class ClassicTeaPage extends Component {
           <li>{classic_milk}</li>
           <li>{classic_sweetener}</li>
         </ul>
-        <h3>Directions:</h3>
+        <h3 className='classicHeadings'>Directions:</h3>
         <p>PLACE HOLDER TEXT</p>
       </div>
     </>

@@ -41,7 +41,19 @@ export default class ClassicTeaPage extends Component {
           <li>{classic_sweetener}</li>
         </ul>
         <h3 className='classicHeadings'>Directions:</h3>
-        <p>PLACE HOLDER TEXT</p>
+        
+        <p>Pour 10oz {classic_tea} into a shaker.</p>
+        {(classic_sweetener !== null) ? <p>Add 2 pumps of {classic_sweetener}</p> : <p className='disabled'></p>}
+        {(classic_flavor1 !== null) ? <p>Add 1 pump of {classic_flavor1}</p> : <p className='disabled'></p>}
+        {(classic_flavor2 !== null) ? <p>Add 1 pump of {classic_flavor2}</p> : <p className='disabled'></p>}
+        {(classic_milk !== null) ? <p>Add 2oz of {classic_milk}</p> : <p className='disabled'></p>}
+        <p>Add 2oz of ice cubes. Cap the shaker and shake until well blended. Set aside</p>
+        <p>Grab your favorite tall glass and straw</p>
+        {(classic_addons1 !== null) ? <p>Pour 2oz of {classic_addons1}</p> : <p className='disabled'></p>}
+        {(classic_addons2 !== null) ? <p>Pour 2oz of {classic_addons2}</p> : <p className='disabled'></p>}
+        <p>Pour in the blended tea</p>
+        <p>Top with more ice and add your straw</p>
+        <p>And now it's done~</p>
       </div>
     </>
   }

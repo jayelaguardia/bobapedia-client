@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
-import LandingPage from './routes&components/LandingPage'
-import DIYPage from './routes&components/DIYPage'
-import ClassicTeaPage from './routes&components/ClassicTeaPage'
-import CreationTeaPage from './routes&components/CreationTeaPage'
-import AddTeaForm from './routes&components/AddTeaForm'
-import UpdateTeaForm from './routes&components/UpdateTeaForm'
-import LoginPage from './routes&components/LoginPageRoute'
-import RegistrationPage from './routes&components/RegistrationPageRoute'
-import PrivateRoute from './routes&components/PrivateRoute'
-import PublicOnlyRoute from './routes&components/PublicOnlyRoute'
+import ClassicPage from './routes_components/ClassicPage'
+import CreationPage from './routes_components/CreationPage'
+import ClassicTeaPage from './routes_components/ClassicTeaPage'
+import CreationTeaPage from './routes_components/CreationTeaPage'
+import AddTeaForm from './routes_components/AddTeaForm'
+import UpdateTeaForm from './routes_components/UpdateTeaForm'
+import LoginPage from './routes_components/LoginPageRoute'
+import RegistrationPage from './routes_components/RegistrationPageRoute'
+import LandingPage from './routes_components/LandingPage'
+import PrivateRoute from './routes_components/PrivateRoute'
+import PublicOnlyRoute from './routes_components/PublicOnlyRoute'
 import TokenService from './services/token-service'
 
 class App extends Component {
@@ -41,8 +42,8 @@ class App extends Component {
         <header className='App__header'>
           <h1>BOBAPEDIA</h1>
           <nav>
-            <Link to={`/`}><button>Classic</button></Link>
-            <Link to={`/DIY`}><button>Creation</button></Link>
+            <Link to={`/classic`}><button>Classic</button></Link>
+            <Link to={`/creation`}><button>Creation</button></Link>
             {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}
@@ -57,9 +58,14 @@ class App extends Component {
               path={'/'}
               component={LandingPage}
             />
+            <Route
+              exact
+              path={'/classic'}
+              component={ClassicPage}
+            />
             <PrivateRoute
-              path={'/DIY'}
-              component={DIYPage}
+              path={'/creation'}
+              component={CreationPage}
             />
             <Route
               path={'/classic/:classicID'}

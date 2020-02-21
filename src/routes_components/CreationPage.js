@@ -4,7 +4,7 @@ import creationContext from '../contexts/creationContext'
 import creationService from '../services/creationService'
 import CreationListItem from './CreationListItem'
 
-export default class DIYPage extends Component {
+export default class CreationPage extends Component {
   static contextType = creationContext
 
   componentDidMount() {
@@ -27,7 +27,7 @@ export default class DIYPage extends Component {
   render() {
     const { error } = this.context
     return (
-      <section className='DIYPage'>
+      <section className='CreationPage'>
         <h2>Creation Tea</h2>
         {error
           ? <p className='red'>There was an error, try again</p>

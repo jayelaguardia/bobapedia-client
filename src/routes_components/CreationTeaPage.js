@@ -23,14 +23,43 @@ export default class CreationTeaPage extends Component {
     creationService.deleteCreation(this.context.creation.creation_id)
     .then(() => {
       this.context.deleteCreation(this.context.creation.creation_id)
-      this.props.history.push('/DIY')
+      this.props.history.push('/creation')
     })
     .catch(this.context.setError)
   }
 
+  jwtDecode = t => {
+    let token = {}
+    token.raw = t;
+    token.header = JSON.parse(window.atob(t.split('.')[0]));
+    token.payload = JSON.parse(window.atob(t.split('.')[1]));
+    return token;
+  }
+
+  checkIfOwn = () => {
+    const authToken = TokenService.getAuthToken()
+    if (!authToken) {
+      return null
+    }
+    else {
+      const user_id = this.jwtDecode(authToken).payload.user_id;
+      if(this.context.creation.creation_user === user_id) {
+        return (        
+          <div className='buttons'>
+          <button onClick={this.handleDelete}>delete</button>
+          <Link to={{
+                  pathname: `/UpdateTeaForm`, 
+                  creationID: this.context.creation.creation_id
+                }}><button>update</button></Link>
+          </div>)
+
+      }
+      else return null
+    }
+  }
+
   renderCreation() {
-    const {
-      creation_user,   
+    const {  
       creation_name,
       creation_tea,
       creation_flavor1,	
@@ -39,8 +68,6 @@ export default class CreationTeaPage extends Component {
       creation_addons2,	
       creation_milk,	
       creation_sweetener } = this.context.creation
-
-      /**TODO: IF CREATION_USER MATCHES LOGGED IN USER, RENDER BUTTONS, ELSE DISABLED */
 
     return <>
       <h2>{creation_name}</h2>
@@ -55,16 +82,23 @@ export default class CreationTeaPage extends Component {
           <li>{creation_milk}</li>
           <li>{creation_sweetener}</li>
         </ul>
+        
         <h3 className='creationHeadings'>Directions:</h3>
-        <p>PLACE HOLDER TEXT</p>
+        
+        <p>Pour 10oz {creation_tea} into a shaker.</p>
+        {(creation_sweetener !== null) ? <p>Add 2 pumps of {creation_sweetener}</p> : <p className='disabled'></p>}
+        {(creation_flavor1 !== null) ? <p>Add 1 pump of {creation_flavor1}</p> : <p className='disabled'></p>}
+        {(creation_flavor2 !== null) ? <p>Add 1 pump of {creation_flavor2}</p> : <p className='disabled'></p>}
+        {(creation_milk !== null) ? <p>Add 2oz of {creation_milk}</p> : <p className='disabled'></p>}
+        <p>Add 2oz of ice cubes. Cap the shaker and shake until well blended. Set aside</p>
+        <p>Grab your favorite tall glass and straw</p>
+        {(creation_addons1 !== null) ? <p>Pour 2oz of {creation_addons1}</p> : <p className='disabled'></p>}
+        {(creation_addons2 !== null) ? <p>Pour 2oz of {creation_addons2}</p> : <p className='disabled'></p>}
+        <p>Pour in the blended tea</p>
+        <p>Top with more ice and add your straw</p>
+        <p>And now it's done~</p>
 
-        <div className='buttons'>
-        <button onClick={this.handleDelete}>delete</button>
-        <Link to={{
-                pathname: `/UpdateTeaForm`, 
-                creationID: this.context.creation.creation_id
-              }}><button>update</button></Link>
-        </div>
+        {this.checkIfOwn()}
 
       </div>
     </>

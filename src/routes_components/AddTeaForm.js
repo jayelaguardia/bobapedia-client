@@ -85,13 +85,13 @@ export default class AddTeaForm extends Component {
       .then(this.context.addCreation)
       .then(() => {
         name.value = ''
-        this.props.history.push('/DIY')
+        this.props.history.push('/creation')
       })
       .catch(this.context.setError)
   }
 
   handleCancel = () => {
-    this.props.history.push('/DIY')
+    this.props.history.push('/creation')
   }
 
   teaSelect = array => {

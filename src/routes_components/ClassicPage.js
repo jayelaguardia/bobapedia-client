@@ -3,7 +3,7 @@ import classicContext from '../contexts/classicContext'
 import classicService from '../services/classicService'
 import ClassicListItem from './ClassicListItem'
 
-export default class LandingPage extends Component {
+export default class ClassicPage extends Component {
   static contextType = classicContext
 
   componentDidMount() {
@@ -26,7 +26,7 @@ export default class LandingPage extends Component {
   render() {
     const { error } = this.context
     return (
-      <section className='LandingPage'>
+      <section className='ClassicPage'>
         <h2>Classic Tea</h2>
         {error
           ? <p className='red'>There was an error, try again</p>

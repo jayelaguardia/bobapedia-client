@@ -8,23 +8,23 @@
 **Authentication**
   The endpoints related to creation tea are protected while the ones for classic, login, and registration are not. Simply register and login and you will have the authentication to access creation tea.
 
-**Endpoints**
-  /registration\
-  - Accepts a json object of username and password and adds it into the user database
-  /login\
-  - Accepts a json object of username and password
-  - Responds with an auth token for the user's current logged in session
-  /classic\
-  - get. Responds with an array of the "top" 15 tea objects with their fields
-  /classic/:classicID\
-  - get. Responds with one specific classicc tea object with its corresponding fields
-  /creation\
-  - get. Responds with an array of all user created tea objects and its fields. Authentication required
-  - post. Accepts a json tea object with every field name required. Null values okay. Adds the tea object into the creation tea database. Authentication required. Responds with 201 if successful
-  /creation/:creationID\
-  - get. Responds with one specific creation tea object with its corresponding fields. Authentication required
-  - delete. Responds with 204 if successful. Authentication required
-  - patch. Accepts a json tea object with every updated field required. Authentication required. Responds with 204 if successful
+**Endpoints**\
+  */registration*\
+  - Accepts a json object of username and password and adds it into the user database\
+  */login*\
+  - Accepts a json object of username and password\
+  - Responds with an auth token for the user's current logged in session\
+  */classic*\
+  - get. Responds with an array of the "top" 15 tea objects with their fields\
+  */classic/:classicID*\
+  - get. Responds with one specific classicc tea object with its corresponding fields\
+  */creation*\
+  - get. Responds with an array of all user created tea objects and its fields. Authentication required\
+  - post. Accepts a json tea object with every field name required. Null values okay. Adds the tea object into the creation tea database. Authentication required. Responds with 201 if successful\
+  */creation/:creationID*\
+  - get. Responds with one specific creation tea object with its corresponding fields. Authentication required\
+  - delete. Responds with 204 if successful. Authentication required\
+  - patch. Accepts a json tea object with every updated field required. Authentication required. Responds with 204 if successful\
 
 ## Screenshots
   The classic tea page where the "top" 15 teas are displayed

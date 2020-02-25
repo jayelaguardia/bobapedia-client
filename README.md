@@ -9,7 +9,7 @@
   The endpoints related to creation tea are protected while the ones for classic, login, and registration are not. Simply register and login and you will have the authentication to access creation tea.
 
 **Endpoints**\
-*/registration*
+  */registration*
   - Accepts a json object of username and password and adds it into the user database <br>
 */login*
   - Accepts a json object of username and password

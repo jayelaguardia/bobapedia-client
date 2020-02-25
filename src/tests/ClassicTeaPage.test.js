@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ClassicTeaPage from '../routes&components/ClassicTeaPage'
+import ClassicTeaPage from '../routes_components/ClassicTeaPage'
 
 it('ClassicTeaPage renders without crashing', () => {
   const div = document.createElement('div');

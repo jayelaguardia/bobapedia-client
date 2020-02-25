@@ -28,6 +28,18 @@ nav {
   height: 70px;
 }
 
+.LandingPage {
+  background-color: #8BBEB2;
+  padding: 30px;
+}
+
+.logininfo {
+  background-color: #E6F9AF;
+  width: 250px;
+  padding: 10px;
+  margin: 20px auto;
+}
+
 .classicListItem, .creationListItem {
   display: inline-flex;
   background-color: #384E77;

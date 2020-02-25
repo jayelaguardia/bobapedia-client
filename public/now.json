@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "jayelaguardia-bobapedia-client",
+  "name": "bobapedia-client",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}

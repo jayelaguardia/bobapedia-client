@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginForm from '../routes&components/LoginForm'
+import LoginForm from '../routes_components/LoginForm'
 
 it('LoginForm renders without crashing', () => {
   const div = document.createElement('div');

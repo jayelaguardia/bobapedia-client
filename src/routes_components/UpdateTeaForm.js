@@ -79,8 +79,6 @@ export default class UpdateTeaForm extends Component {
       creation_milk: milk.value,
       creation_sweetener: sweetener.value,
     }
-
-    console.log(creation)
     
     const arrayKeys = Object.keys(creation)
 
@@ -122,7 +120,6 @@ export default class UpdateTeaForm extends Component {
   }
 
   render() {
-    console.log(this.context.creation)
     return (
       <>
       <h2>Update Form</h2>

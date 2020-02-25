@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
+      <div className='app'>
 
         <header className='App__header'>
           <h1>BOBAPEDIA</h1>
@@ -64,30 +64,37 @@ class App extends Component {
               component={ClassicPage}
             />
             <PrivateRoute
+              exact
               path={'/creation'}
               component={CreationPage}
             />
             <Route
+              exact
               path={'/classic/:classicID'}
               component={ClassicTeaPage}
             />
             <PrivateRoute
+              exact
               path={'/creation/:creationID'}
               component={CreationTeaPage}
             />
             <PrivateRoute
+              exact
               path={'/AddTeaForm'}
               component={AddTeaForm}
             />
             <PrivateRoute
+              exact
               path={'/UpdateTeaForm'}
               component={UpdateTeaForm}
             />
             <PublicOnlyRoute
+              exact
               path={'/login'}
               component={LoginPage}
             />
             <PublicOnlyRoute
+              exact
               path={'/register'}
               component={RegistrationPage}
             />

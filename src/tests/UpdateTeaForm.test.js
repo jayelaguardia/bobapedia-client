@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import UpdateTeaForm from '../routes&components/UpdateTeaForm'
+import { shallow } from 'enzyme';
+import UpdateTeaForm from '../routes_components/UpdateTeaForm'
 
 it('UpdateTeaForm renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<UpdateTeaForm />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const wrapper = shallow(<UpdateTeaForm />);
+  expect(wrapper.find('.UpdateTeaForm'))
 });

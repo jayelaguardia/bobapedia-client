@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RegistrationForm from '../routes&components/RegistrationForm'
+import RegistrationForm from '../routes_components/RegistrationForm'
 
 it('RegistrationForm renders without crashing', () => {
   const div = document.createElement('div');

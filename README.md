@@ -10,17 +10,17 @@
 
 **Endpoints**\
 */registration*
-  - Accepts a json object of username and password and adds it into the user database
+  - Accepts a json object of username and password and adds it into the user database <br>
 */login*
   - Accepts a json object of username and password
-  - Responds with an auth token for the user's current logged in session
+  - Responds with an auth token for the user's current logged in session <br>
 */classic*
-  - get. Responds with an array of the "top" 15 tea objects with their fields
+  - get. Responds with an array of the "top" 15 tea objects with their fields <br>
 */classic/:classicID*
-  - get. Responds with one specific classicc tea object with its corresponding fields
+  - get. Responds with one specific classicc tea object with its corresponding fields <br>
 */creation*
   - get. Responds with an array of all user created tea objects and its fields. Authentication required
-  - post. Accepts a json tea object with every field name required. Null values okay. Adds the tea object into the creation tea database. Authentication required. Responds with 201 if successful
+  - post. Accepts a json tea object with every field name required. Null values okay. Adds the tea object into the creation tea database. Authentication required. Responds with 201 if successful <br>
 */creation/:creationID*
   - get. Responds with one specific creation tea object with its corresponding fields. Authentication required
   - delete. Responds with 204 if successful. Authentication required

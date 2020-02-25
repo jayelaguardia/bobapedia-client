@@ -1,7 +1,7 @@
 # Bobapedia Client
 
 ## Live App
-[Bobapedia](https://build-theta-ecru.now.sh/)
+[Bobapedia](https://bobapedia-client.now.sh/)
 
 ## API Documentation
 

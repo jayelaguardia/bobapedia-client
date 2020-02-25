@@ -1,4 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bobapedia Client
+
+## Live App
+[Bobapedia](https://build-theta-ecru.now.sh/)
+
+## API Documentation
+
+**Authentication**
+  The endpoints related to creation tea are protected while the ones for classic, login, and registration are not. Simply register and login and you will have the authentication to access creation tea.
+
+**Endpoints**
+  /registration 
+  - Accepts a json object of username and password and adds it into the user database
+  /login
+  - Accepts a json object of username and password
+  - Responds with an auth token for the user's current logged in session
+  /classic
+  - get. Responds with an array of the "top" 15 tea objects with their fields
+  /classic/:classicID
+  - get. Responds with one specific classicc tea object with its corresponding fields
+  /creation
+  - get. Responds with an array of all user created tea objects and its fields. Authentication required
+  - post. Accepts a json tea object with every field name required. Null values okay. Adds the tea object into the creation tea database. Authentication required. Responds with 201 if successful
+  /creation/:creationID
+  - get. Responds with one specific creation tea object with its corresponding fields. Authentication required
+  - delete. Responds with 204 if successful. Authentication required
+  - patch. Accepts a json tea object with every updated field required. Authentication required. Responds with 204 if successful
+
+## Screenshots
+  The classic tea page where the "top" 15 teas are displayed
+	![Classic Tea Page](classicPage.PNG)
+  After clicking on a tea, this recipe card will show with the correct fields to make that tea
+  ![ClassicID Tea Recipe Page](classicID.PNG)
+
+## Summary
+
+Bobapedia is a collection of bubble (or boba) tea recipes. The Classic page is where you'll find the "top" 15 bubble teas. Clicking on one will direct you to the recipe to make that tea. The Creation page is where you can make your own tea recipe as well as view other teas made by other users. You can also update or delete the teas you have made. However, you must have an account to view or use this page. Please use the register tab to make an account or login if you've already made one.
+
+## Technology used
+
+Javascript, HTML, React
+
+## Current known bugs
+**Client and server testing:**
+  I have about half the tests working. The other half, I have no idea why they don't work. I thought I implemented the test cases correctly from the curriculum but that doesn't seem to be the case.
+**Client and server script commands:**
+  `npm run deploy` command for both client and server don't exactly work as expected. Neither does `npm run migrate` for server side. I manually ran the commands for deployment when I couldn't get them to work. I prioritized working on the bulk of the app instead of spending time to get these commands to work and I forgot to work on them again before the time of submission.
+**Update Tea Page:**
+  When you go to update the tea creations, the default values will not populate the form even though I used `defaultValue` within the form. However, it will still work as expected. A possible solution would be to use `value` and `onchange` instead and refactor the context to continuously set the correct values for the updated tea. Like earlier, I prioritized more pressing matters as time was running out.
+
+
+# This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -26,43 +77,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
